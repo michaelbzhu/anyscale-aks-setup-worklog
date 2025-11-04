@@ -1,0 +1,28 @@
+# View the docs https://docs.anyscale.com/reference/job-api#jobconfig.
+
+name: my-first-job
+
+# When empty, use the default image. This can be an Anyscale-provided base image
+# like anyscale/ray:2.43.0-slim-py312-cu125, a user-provided base image (provided
+# that it meets certain specs), or you can build new images using the Anyscale
+# image builder at https://console.anyscale-staging.com/v2/container-images.
+image_uri: # anyscale/ray:2.43.0-slim-py312-cu125
+
+# Path to a local directory or a remote URI to a .zip file (S3, GS, HTTP) that
+# will be the working directory for the job. The files in the directory will be
+# automatically uploaded to the job environment in Anyscale.
+working_dir: .
+
+env_vars:
+  EXAMPLE_ENV_VAR: EXAMPLE_VAL
+  AZURE_STORAGE_ACCOUNT: michaelzanyscaledemosa # UPDATE to the storage account name in aks
+
+# When empty, this uses the default Anyscale Cloud in your organization.
+cloud: michaelz-cluster # UPDATE to the cloud name in your anyscale console
+
+# The script to run in your job. You can also do "uv run main.py" if you have a
+# pyproject.toml file in your working_dir.
+entrypoint: python main.py
+
+# If there is an error, do not retry.
+max_retries: 0

@@ -1,0 +1,12 @@
+name: pi-sample-job
+
+working_dir: .
+
+env_vars:
+  AZURE_STORAGE_ACCOUNT: michaelzanyscaledemosa
+
+cloud: michaelz-cluster
+
+entrypoint: python main.py
+
+max_retries: 0
