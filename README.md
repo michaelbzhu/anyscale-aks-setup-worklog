@@ -8,7 +8,7 @@
 - [Fixing Missing AZURE_CLIENT_ID](#fixing-missing-azure_client_id)
 - [Fixing Authentication Issue](#fixing-authentication-issue)
 - [Storage Account CORS Issue](#storage-account-cors-issue)
-
+- [references](#references)
 
 ### terraform
 First I updated the default value for `variable "aks_cluster_name"` in `terraform/variables.tf`
@@ -310,3 +310,6 @@ az storage cors add \
 ```
 
 wait a bit for the cors config to propagate and the logs should show up in the console.
+
+### references
+https://github.com/anyscale/terraform-kubernetes-anyscale-foundation-modules/tree/main/examples/azure/aks-new_cluster
